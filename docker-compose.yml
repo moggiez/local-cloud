@@ -13,7 +13,7 @@ services:
       - "4571:4571"
       - "8080:8080"
     environment:
-      - SERVICES=s3,dynamodb,apigateway,cloudwatch
+      - SERVICES=s3,dynamodb,apigateway,cloudwatch,kms,events
       - DEFAULT_REGION=eu-west-1
       - DEBUG=true
       - DATA_DIR=/tmp/localstack/data
