@@ -39,3 +39,19 @@ make dynamodb-ui
 Uncomment the `localstack-s3-ui` service in `docker-compose.yml` and restart localstack to get S3 UI (untested).
 
 ### Lambda
+
+# Creating infrastructure locally
+
+Run the command
+
+```bash
+make <project_name>
+```
+
+to create the infrastructure associated with a particular project
+
+Example:
+
+```bash
+make storage
+```
