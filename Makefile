@@ -6,3 +6,5 @@ dynamodb-ui:
 	npm i -g dynamodb-admin && DYNAMO_ENDPOINT=http://localhost:4566 dynamodb-admin
 storage:
 	./scripts/run_infra_locally.sh storage
+api:
+	./scripts/run_infra_locally.sh api

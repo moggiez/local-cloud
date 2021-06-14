@@ -9,14 +9,16 @@ mkdir -p $PROJ_DIR
 cp ./infrastructure/main.tf temp/$NAME
 cd ../$NAME
 
-FILES=$(find . -type f -name "*.tf" -exec basename \{} \;)
+FILES=$(find . -type f -name "*.tf")
 
 for f in $FILES
 do
     # if [[ "$f" =~ ^(main.tf|code_artifact.tf)$ ]]
-    if [[ "$f" =~ $(echo ^\($(paste -sd'|' $CURRENT_DIR/scripts/ignore_files)\)$) ]]
-    then
+    b=$(basename $f)
+    if [[ "$b" =~ $(echo ^\($(paste -sd'|' $CURRENT_DIR/scripts/ignore_files)\)$) ]]; then
         echo "Skipping $f"
+    elif [[ "$f" == *".terraform/modules"* ]]; then
+        echo "Skipping module file $f"
     else
         echo $f
         cp $f $PROJ_DIR
