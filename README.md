@@ -33,6 +33,11 @@ brew install jq
 sudo apt-get install jq
 ```
 
+## Useful links
+
+- LocalStack services health: http://localhost:4566/health
+- AWS Lambda functions: http://localhost:4566/2015-03-31/functions/
+
 ## Calling Local AWS Gateway
 
 (some handy scripts to get api id, stage, the url etc. exist in ./scripts and ./aws-helpers)
