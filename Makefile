@@ -17,5 +17,7 @@ storage:
 	./scripts/run_infra_locally.sh storage
 api:
 	./scripts/run_infra_locally.sh api
+npm-auth:
+	aws codeartifact login --tool npm --repository team-npm --domain moggies-io --domain-owner 989665778089
 
 .PHONY: clouds

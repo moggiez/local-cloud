@@ -9,5 +9,7 @@ get-tables:
 	awslocal dynamodb list-tables
 get-functions:
 	awslocal lambda list-functions
+get-function:
+	awslocal lambda get-function --function-name ${F}
 get-playbooks:
 	curl http://localhost:4566/restapis/${API_ID}/blue/_user_request_/playbook/${ORG_ID} --data '{}' -H "Authorization: ${COGNITO_TOKEN}"
