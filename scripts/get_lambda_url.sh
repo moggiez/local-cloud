@@ -1,0 +1,1 @@
+echo http://localhost:4566/restapis/${API_ID}/${API_STAGE}/_user_request_/${API_ROUTE}

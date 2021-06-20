@@ -13,12 +13,12 @@ services:
       - "4571:4571"
       - "8080:8080"
     environment:
-      - SERVICES=s3,dynamodb,apigateway,cloudwatch,kms,events
+      - SERVICES=lambda,iam,s3,dynamodb,apigateway,cloudwatch,kms,events,route53,acm
       - DEFAULT_REGION=eu-west-1
       - DEBUG=true
       - DATA_DIR=/tmp/localstack/data
       - PORT_WEB_UI=8080
-      - LAMBDA_EXECUTOR=local
+      - LAMBDA_EXECUTOR=docker-reuse
       - DOCKER_HOST=unix:///var/run/docker.sock
       - HOST_TMP_FOLDER=${TMPDIR}
     volumes:

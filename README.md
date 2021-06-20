@@ -2,6 +2,60 @@
 
 Simulates AWS locally.
 
+To create the whole stack run:
+
+```bash
+make universe
+```
+
+Check health:
+Go to http://localhost:4566/health
+
+## Tools to install
+
+### `awslocal`
+
+```bash
+pip install awscli-local
+```
+
+### `jq`
+
+- OS X
+
+```bash
+brew install jq
+```
+
+- Debian
+
+```bash
+sudo apt-get install jq
+```
+
+## Calling Local AWS Gateway
+
+(some handy scripts to get api id, stage, the url etc. exist in ./scripts and ./aws-helpers)
+
+- Address of an api resource `http://localhost:4566/restapis/<api id>/<stage>/_user_request_/<path> Example: For `loadtest` resource:
+  Get API id
+
+```bash
+awslocal apigateway get-rest-apis
+```
+
+Get Stages
+
+```bash
+awslocal apigateway get-stages --rest-api-id <api id>
+```
+
+Make the call
+
+```bash
+curl http://localhost:4566/restapis/yfwecjnz5o/blue/_user_request_/loadtest
+```
+
 ## Prerequisites
 
 - Python
