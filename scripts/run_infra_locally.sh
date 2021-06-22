@@ -12,6 +12,7 @@ mkdir -p $PROJ_DIR
 mkdir -p $TEMPLATES_DIR
 cp ./infrastructure/main.tf $INFRA_DIR
 cd $PARENT_DIR/$NAME
+make build
 
 TF_FILES=$(find . -type f -name "*.tf")
 JSON_FILES=$(find . -type f -name "*.json")

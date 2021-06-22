@@ -13,3 +13,5 @@ get-function:
 	awslocal lambda get-function --function-name ${F}
 get-playbooks:
 	curl http://localhost:4566/restapis/${API_ID}/blue/_user_request_/playbook/${ORG_ID} --data '{}' -H "Authorization: ${COGNITO_TOKEN}"
+update-fn:
+	awslocal lambda update-function-code --function-name $F --zip-file fileb://$D/api/dist/$F.zip
